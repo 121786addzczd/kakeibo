@@ -13,8 +13,22 @@
 
   <body>
     <%= render 'shared/header' %>
+    <div class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <% if flash[:alert] %>
+        <div class="alert alert-danger"role="alert">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+
+
+
     <%= yield %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
