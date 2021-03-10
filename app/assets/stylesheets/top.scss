@@ -1,3 +1,49 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.jumbotron {
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05) ), image-url("/images/kakeibo.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+#top-image {
+  margin-bottom: -2rem;
+}
+
+
+
+.top-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 767px) {
+  .navbar__sign-in-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .top-authentication {
+    &__sign-in-btn {
+      display: none;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(217, 215, 215);
+  margin-top: auto;
+}
