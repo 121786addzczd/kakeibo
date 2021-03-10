@@ -12,24 +12,29 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
+    <div class="wrapper">
+      <%= render 'shared/header' %>
 
-    <div class="container">
-      <% if flash[:notice] %>
-        <div class="alert alert-success" role="alert">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
+      <div class="container">
+        <% if flash[:notice] %>
+          <div class="alert alert-success" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
 
-      <% if flash[:alert] %>
-        <div class="alert alert-danger"role="alert">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
+        <% if flash[:alert] %>
+          <div class="alert alert-danger"role="alert">
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
+      </div>
+
+
+
+      <%= yield %>
+      <footer>
+        <%= render 'shared/footer' %>
+      </footer>
     </div>
-
-
-
-    <%= yield %>
   </body>
 </html>

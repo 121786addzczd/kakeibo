@@ -9,9 +9,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <%# <% if logged_in? %> 
+          <% if session[:user_id].present? %>
             <li class="nav-item">
-              <%= link_to "#", class: "nav-link text-white" do %>
+              <%= link_to edit_user_path, class: "nav-link text-white" do %>
                 <i class="fas fa-user"></i> マイページ
               <% end %>
             </li>
@@ -20,7 +20,7 @@
                 <i class="fas fa-sign-out-alt"></i> ログアウト
               <% end %>
             </li>
-          <%# <% else %> 
+          <% else %>
             <li class="nav-item">
               <%= link_to sign_up_path, class: "nav-link text-white" do %>
                 <i class="fas fa-user-edit"></i> ユーザー登録
@@ -31,7 +31,7 @@
                 <i class="fas fa-power-off"></i> ログイン
               <% end %>
             </li>
-          <%# <% end %> 
+          <% end %>
         </ul>
       </div>
     </div>
@@ -49,7 +49,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <%= link_to "#", class: "nav-link text-white" do %>
+                <%= link_to edit_user_path, class: "nav-link text-white" do %>
                   <i class="fas fa-user"></i> マイページ
                 <% end %>
               </li>
