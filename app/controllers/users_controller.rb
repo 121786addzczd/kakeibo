@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "登録しました"
-    # どこかへリダイレクト
+      redirect_to sign_in_path
     else
       flash.now[:alert] = "登録に失敗しました"
       render "new"
