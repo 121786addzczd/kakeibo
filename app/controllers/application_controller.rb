@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # 未ログインのリクエスト処理
-  def redirect_to_signin
-    redirect_to signin_path if session[:user_id].blank?
+  def redirect_to_sign_in
+    redirect_to sign_in_path if session[:user_id].blank?
   end
 end

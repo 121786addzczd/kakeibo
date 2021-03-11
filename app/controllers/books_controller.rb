@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only:[:show,:edit,:update,:destroy]
-  before_action :redirect_to_signin
+  before_action :redirect_to_sign_in
 
   def index
     @books = Book.where(user_id: session[:user_id])
@@ -58,8 +58,8 @@ class BooksController < ApplicationController
     @book = Book.where(user_id: session[:user_id]).find(params[:id])
   end
 
-  def redirect_to_signin
-    redirect_to signin_path if session[:user_id].blank?
+  def redirect_to_sign_in
+    redirect_to sign_in_path if session[:user_id].blank?
   end
 
 end
